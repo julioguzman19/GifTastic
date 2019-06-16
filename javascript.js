@@ -3,8 +3,15 @@
 let api = "http://api.giphy.com/v1/gifs/search?"
 let apiKey = "&api_key=vuQllzX4miPlYbuVJ1MIViy7wMvNFuKw"
 let query = "&q=rainbow";
-let queryURL = api + apiKey + query
-console.log("df")
+let queryURL = (api + apiKey + query);
+//add-to-do ID on button
+console.log('d')
 $('#add-to-do').on("click",function(){
-    console.log("df")
+    $.ajax({
+        url:queryURL,
+        method:"GET"
+    }).then(function(response){
+        console.log(response)
+    })
+    
 })
