@@ -5,13 +5,16 @@ let apiKey = "&api_key=vuQllzX4miPlYbuVJ1MIViy7wMvNFuKw"
 let query = "&q=rainbow";
 let queryURL = (api + apiKey + query);
 //add-to-do ID on button
-console.log('d')
-$('#add-to-do').on("click",function(){
+
+$('#inputSearch').on("click",function(){
+    let giphy = document.getElementById("inputSearch").value 
+    console.log(giphy);
     $.ajax({
         url:queryURL,
         method:"GET"
     }).then(function(response){
         console.log(response)
+        $("#gif").append(response.data[0].imagess)
     })
     
 })
