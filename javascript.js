@@ -1,7 +1,33 @@
-/* let queryURL = "https://api.giphy.com/v1/gifs/random?api_key=BkaUZZWcFij6J7AoQj3WtPb1R2p9O6V9&tag=cats"; */
-//Using my API Key
+//Array for current visible buttons
+let animalList = ["Bat","Cat","Dog","Elephant","Pengin","Snail","Snake","Owl"];
 
+//Creating buttons for current animal list
+    for(let i=0; i<animalList.length;i++){
+        $(".animalButtons").append("<button "+ "data-animal =" +animalList[i] +">"  + animalList[i] + "</button>")
+    }
+//Creating new butons for users inputs and appending into id animalButtons
 $('#button').on("click",function(){
+    let giphyTextSearch = document.getElementById("inputSearch").value
+    $(".animalButtons").append("<button "+ "data-animal =" +giphyTextSearch +">" + giphyTextSearch  + "</button>")
+})
+
+//Retrieving Giphys via button click
+$('button').on("click",function(){
+    let currentAnimal = $(this).attr("data-animal");
+    console.log(currentAnimal);
+    
+    let api = "http://api.giphy.com/v1/gifs/search?"
+    let apiKey = "&api_key=vuQllzX4miPlYbuVJ1MIViy7wMvNFuKw"
+    let query = "&q=";//after q= its the search for the giphy
+    let giphyTextSearch = document.getElementById("inputSearch").value 
+    let queryURL = (api + apiKey + query + "'" + giphyTextSearch + "'");
+
+  
+})
+
+
+
+/* $('#button').on("click",function(){
     
     
     let api = "http://api.giphy.com/v1/gifs/search?"
@@ -16,6 +42,5 @@ $('#button').on("click",function(){
         method:"GET"
     }).then(function(response){
         $("#gif").append("<img src = "+response.data[0].images.original.url+"/>")
-    })
-    
-})
+    }) 
+}) */
