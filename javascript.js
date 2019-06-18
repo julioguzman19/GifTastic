@@ -9,7 +9,7 @@ let animalList = ["Cat","Dog","Elephant","Pengin","Snail","Snake","Owl","Sloth"]
 //Creating new butons for users inputs and appending into id animalButtons
 $('#button').on("click",function(){
     let giphyTextSearch = document.getElementById("inputSearch").value
-    $(".animalButtons").append("<button "+ "data-animal =" + "data-state =" +giphyTextSearch +">" + giphyTextSearch  + "</button>")
+    $(".animalButtons").append("<button "+ "data-animal ="  +giphyTextSearch +">" + giphyTextSearch  + "</button>")
   
     animalList.push(giphyTextSearch);
     
@@ -27,23 +27,28 @@ $('button').on("click",function(){
         let apiKey = "&api_key=vuQllzX4miPlYbuVJ1MIViy7wMvNFuKw"
         let query = "&q=";//after q= its the search for the giphy
         let queryURL = (api + apiKey + query + "'" + currentAnimal + "'");
+        
 
-        for(let i=0; i<10;i++){
+        for(let i=0; i<1;i++){
             $.ajax({
                 url:queryURL,
                 method:"GET"
             }).then(function(response){
                 //original will have animated original_still wont be animated can set variable for this
-                $("#gif").append("<img src = "+response.data[i].images.original_still.url+"/>")
+                let still = response.data[i].images.original_still.url;
+                let animate = response.data[i].images.original.url
+                $(".gif").append("<img src = "+ still +" "+"data-still ="+ still +" "+ "data-animate ="+ animate + " "+ "data-state = still" +" "+ "/>")
                 
             }) 
         }   
-}
+    }
 
 })
 
-$('#gif').on("click",function(e){
-    console.log(e);
+$('.gif').on("click",function(){
+    console.log($(this).attr("data-state"));
 
-})
+ })
+
+
 
