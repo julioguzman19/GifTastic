@@ -3,23 +3,23 @@ let animalList = ["Cat","Dog","Elephant","Pengin","Snail","Snake","Owl","Sloth"]
 
 //Creating buttons for current animal list
     for(let i=0; i<animalList.length;i++){
-        $(".animalButtons").append("<button "+ "data-animal =" + "data-state ="+ +animalList[i] +">"  + animalList[i] + "</button>")
+        $(".animalButtons").append("<button "+"class = gif"+" " + "data-animal ="+ animalList[i]  +">"  + animalList[i] + "</button>")
     }
 
 //Creating new butons for users inputs and appending into id animalButtons
 $('#button').on("click",function(){
     let giphyTextSearch = document.getElementById("inputSearch").value
-    $(".animalButtons").append("<button "+ "data-animal ="  +giphyTextSearch +">" + giphyTextSearch  + "</button>")
-  
-    animalList.push(giphyTextSearch);
+    $(".animalButtons").append("<button "+ "class = gif"+" " + "data-animal ="  +giphyTextSearch +">" + giphyTextSearch  + "</button>")
+    console.log(giphyTextSearch)
     
 })
 
 //FAILING CUZ THE ABOVE IS NOT BEING RECOGNIZED GLOBALLY? FOR HTE NEW BUTTON
 
 //Retrieving Giphys via button click
-$('button').on("click",function(){
+$('.gif').on("click",function(){
     let currentAnimal = $(this).attr("data-animal");
+    console.log(currentAnimal)
     if(currentAnimal!== undefined){
        
         
@@ -29,7 +29,7 @@ $('button').on("click",function(){
         let queryURL = (api + apiKey + query + "'" + currentAnimal + "'");
         
 
-        for(let i=0; i<1;i++){
+        for(let i=0; i<2;i++){
             $.ajax({
                 url:queryURL,
                 method:"GET"
@@ -37,18 +37,14 @@ $('button').on("click",function(){
                 //original will have animated original_still wont be animated can set variable for this
                 let still = response.data[i].images.original_still.url;
                 let animate = response.data[i].images.original.url
-                $(".gif").append("<img src = "+ still +" "+"data-still ="+ still +" "+ "data-animate ="+ animate + " "+ "data-state = still" +" "+ "/>")
-                
+                $("#gifsDiv").append("<img src = "+still+"/>")
+                console.log(currentAnimal)
             }) 
         }   
     }
 
-})
+});
 
-$('.gif').on("click",function(){
-    console.log($(this).attr("data-state"));
-
- })
 
 
 
