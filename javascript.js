@@ -17,7 +17,7 @@ $('#button').on("click",function(){
 //FAILING CUZ THE ABOVE IS NOT BEING RECOGNIZED GLOBALLY? FOR HTE NEW BUTTON
 
 //Retrieving Giphys via button click
-$('.gif').on("click",function(){
+$(".animalButtons").on("click",".gif",function(){
     let currentAnimal = $(this).attr("data-animal");
     console.log(currentAnimal)
     if(currentAnimal!== undefined){
