@@ -14,9 +14,10 @@ $('#button').on("click",function(){
     
 })
 
-//FAILING CUZ THE ABOVE IS NOT BEING RECOGNIZED GLOBALLY? FOR HTE NEW BUTTON
+
 
 //Retrieving Giphys via button click
+//Third parameter to grab it from the parent for new buttons
 $(".animalButtons").on("click",".gif",function(){
     let currentAnimal = $(this).attr("data-animal");
     console.log(currentAnimal)
@@ -37,14 +38,30 @@ $(".animalButtons").on("click",".gif",function(){
                 //original will have animated original_still wont be animated can set variable for this
                 let still = response.data[i].images.original_still.url;
                 let animate = response.data[i].images.original.url
-                $("#gifsDiv").append("<img src = "+still+"/>")
+                // let img = `<img class="gif" src=${still} data-number=${i} />`
+                let img = `<img 
+                class="gif" src=${still} data-animate=${animate} data-still=${still} data-state="still" />`
+
+                $("#gifsDiv").append(img);
                 console.log(currentAnimal)
             }) 
         }   
     }
-
 });
 
+//Clicking images
+$(document).on("click", '.gif', function(event){
+    // let i = $(this).attr("number");
+    let test = $(this).attr("src");
 
+
+    if (event.currentTarget.dataset.state === 'still') {
+        // if still, change to active
+    } else {
+        // change to still
+    }
+    console.log(event);
+
+});
 
 
