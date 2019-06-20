@@ -20,6 +20,7 @@ $('#button').on("click",function(){
 //Third parameter to grab it from the parent for new buttons
 $(".animalButtons").on("click",".gif",function(){
     let currentAnimal = $(this).attr("data-animal");
+
     if(currentAnimal!== undefined){
        
         
@@ -29,7 +30,7 @@ $(".animalButtons").on("click",".gif",function(){
         let queryURL = (api + apiKey + query + "'" + currentAnimal + "'");
         
 
-        for(let i=0; i<2;i++){
+        for(let i=0; i<1;i++){
             $.ajax({
                 url:queryURL,
                 method:"GET"
@@ -40,8 +41,7 @@ $(".animalButtons").on("click",".gif",function(){
                 // let img = `<img class="gif" src=${still} data-number=${i} />`
                 let img = `<img 
                 class="gif" src=${still} data-animate=${animate} data-still=${still} data-state="still" />`
-
-                $("#gifsDiv").append(img);
+                $("#gifsDiv").empty().append(img); //empty will empty element so then i can just replace
             }) 
         }   
     }
