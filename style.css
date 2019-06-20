@@ -1,3 +1,11 @@
+.animalButtons{
+    height: 50px; /*Adds Space between animal buttons and input search */
+}
+
+.animalButtons.button{
+    color:blue;
+}
+
 img{
     border: 1px solid black;
     height:150px;
