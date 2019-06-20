@@ -20,7 +20,7 @@ $('#button').on("click",function(){
 //Third parameter to grab it from the parent for new buttons
 $(".animalButtons").on("click",".gif",function(){
     let currentAnimal = $(this).attr("data-animal");
-    console.log(currentAnimal)
+    console.log($(this))
     if(currentAnimal!== undefined){
        
         
@@ -43,7 +43,6 @@ $(".animalButtons").on("click",".gif",function(){
                 class="gif" src=${still} data-animate=${animate} data-still=${still} data-state="still" />`
 
                 $("#gifsDiv").append(img);
-                console.log(currentAnimal)
             }) 
         }   
     }
@@ -51,9 +50,6 @@ $(".animalButtons").on("click",".gif",function(){
 
 //Clicking images
 $(document).on("click", '.gif', function(event){
-    // let i = $(this).attr("number");
-    let test = $(this).attr("src");
-
 
     if (event.currentTarget.dataset.state === 'still') {
         // if still, change to active
@@ -61,6 +57,7 @@ $(document).on("click", '.gif', function(event){
         // change to still
     }
     console.log(event);
+
 
 });
 
