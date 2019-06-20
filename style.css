@@ -1,9 +1,25 @@
-.animalButtons{
-    height: 50px; /*Adds Space between animal buttons and input search */
+.container{
+    text-align: center;
+    width:100%;
 }
 
-.animalButtons.button{
+.animalButtons{
+    height: 80px; /*Adds Space between animal buttons and input search */
+}
+
+/*CSS only on animal buttons*/
+#animalButtonsID button{
+    background-color: white;
+    border: 1px solid black;
     color:blue;
+    margin-left: 7px;
+    padding: 15px;
+    text-align: center;
+}
+
+#animalButtonsID button:hover{
+    box-shadow:gray 0 0px 0px 40px inset;
+    color: black;
 }
 
 img{
