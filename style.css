@@ -1,27 +1,46 @@
+/*DIV container holding entire body*/
 .container{
+    background:linear-gradient(to right, rgb(28, 146, 210), rgb(242, 252, 254));
     text-align: center;
     width:100%;
 }
 
+/*DIV for animal buttons and animal buttons CSS*/
 .animalButtons{
     height: 80px; /*Adds Space between animal buttons and input search */
 }
-
-/*CSS only on animal buttons*/
-#animalButtonsID button{
+#animalButtonsDiv button{
     background-color: white;
     border: 1px solid black;
     color:blue;
+    font-size: 15px;
     margin-left: 7px;
     padding: 15px;
     text-align: center;
 }
-
-#animalButtonsID button:hover{
+#animalButtonsDiv button:hover{
     box-shadow:gray 0 0px 0px 40px inset;
     color: black;
 }
 
+/*DIV Input Search*/
+#inputSearchDiv{
+    height: 50px; /*Adds space between animal search and images*/
+}
+#inputSearch{
+    border:1px solid black;
+    font-size:15px;
+}
+#inputSearchDiv button{
+    border: 1px solid black;
+    font-size: 15px;
+}
+#inputSearchDiv button:hover{
+    box-shadow:black 0 0px 0px 40px inset;
+    color: white;
+}
+
+/*Images produced by gifs*/
 img{
     border: 1px solid black;
     height:150px;
