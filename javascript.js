@@ -42,6 +42,7 @@ $(".animalButtons").on("click",".gif",function(){
                 let rating = $("<p>").text("Rating: " +response.data[i].rating);
                 let img = `<img class="gif" src=${still} data-animate=${animate} data-still=${still} data-state="still" />`
                 
+                $("#gifsDiv").append($("<span class=inLineBlock>"));
                 $("#gifsDiv").append(rating);
                 $("#gifsDiv").append(img); //empty will empty element so then i can just replace
             }) 
@@ -49,12 +50,10 @@ $(".animalButtons").on("click",".gif",function(){
     }
 });
 
-//Clicking images
+//Animating on click
 
 $("#gifsDiv").on("click",".gif",function(event){
     let state = $(this).attr("data-state");
-
-
     if (state === "still") {
         $(this).attr("src", $(this).attr("data-animate"));
         $(this).attr("data-state", "animate");
