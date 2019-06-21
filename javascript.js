@@ -39,12 +39,12 @@ $(".animalButtons").on("click",".gif",function(){
                 //original will have animated original_still wont be animated can set variable for this
                 let still = response.data[i].images.original_still.url;
                 let animate = response.data[i].images.original.url
-                let rating = $("<p>").text("Rating: " +response.data[i].rating);
+                let rating = ("Rating: " +response.data[i].rating);
                 let img = `<img class="gif" src=${still} data-animate=${animate} data-still=${still} data-state="still" />`
+                let div = `<div class="inlineBlock"><p> ${rating} </p><img class="gif" src= ${still} data-animate=${animate} data-still=${still} data-state="still" />   </div>`
                 
-                $("#gifsDiv").append($("<span class=inLineBlock>"));
-                $("#gifsDiv").append(rating);
-                $("#gifsDiv").append(img); //empty will empty element so then i can just replace
+                $("#gifsDiv").append(div);
+              
             }) 
         }   
     }
