@@ -24,7 +24,7 @@ $(".animalButtons").on("click",".gif",function(){
     if(currentAnimal!== undefined){
        
         
-        let api = "http://api.giphy.com/v1/gifs/search?"
+        let api = "https://api.giphy.com/v1/gifs/search?"
         let apiKey = "&api_key=vuQllzX4miPlYbuVJ1MIViy7wMvNFuKw"
         let query = "&q=";//after q= its the search for the giphy
         let queryURL = (api + apiKey + query + "'" + currentAnimal + "'");
