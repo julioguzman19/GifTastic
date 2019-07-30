@@ -1,9 +1,9 @@
 //Array for current visible buttons
-let animalList = ["Cat","Dog","Elephant","Pengin","Snail","Snake","Owl","Sloth"];
+let list = ["Cat","Sloth","Funny","Basketball","Coder","GameofThrones","Netflix","Bachelor","Team","Tequila"];
 
 //Creating buttons for current animal list
-    for(let i=0; i<animalList.length;i++){
-        $(".animalButtons").append("<button "+"class = gif"+" " + "data-animal ="+ animalList[i]  +">"  + animalList[i] + "</button>")
+    for(let i=0; i<list.length;i++){
+        $(".animalButtons").append("<button "+"class = gif"+" " + "data-animal ="+ list[i]  +">"  + list[i] + "</button>")
     }
 
 //Creating new butons for users inputs and appending into id animalButtons
@@ -63,16 +63,5 @@ $("#gifsDiv").on("click",".gif",function(event){
       }
 });
 
-/* $(document).on("click", '.gif', function(event){
-
-    if (event.currentTarget.dataset.state === 'still') {
-        // if still, change to active
-    } else {
-        // change to still
-    }
-    console.log(event.currentTarget);
-
-
-}); */
 
 
