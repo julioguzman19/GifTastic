@@ -1,52 +1,62 @@
 /*DIV container holding entire body*/
-.container{
-    background:linear-gradient(to right, rgb(28, 146, 210), rgb(242, 252, 254));
-    text-align: center;
-    width:100%;
+.container {
+  background: linear-gradient(to right, rgb(28, 146, 210), rgb(242, 252, 254));
+  text-align: center;
+  width: 100%;
+  max-width: 980px;
+  margin: 0 auto;
 }
 
 /*DIV for animal buttons and animal buttons CSS*/
-.animalButtons{
-    height: 80px; /*Adds Space between animal buttons and input search */
+.animalButtons {
+  height: 200px; /*Adds Space between animal buttons and input search */
 }
-#animalButtonsDiv button{
-    background-color: white;
-    border: 1px solid black;
-    color:blue;
-    font-size: 15px;
-    margin-left: 7px;
-    padding: 15px;
-    text-align: center;
+#animalButtonsDiv button {
+  background-color: white;
+  border: 1px solid black;
+  color: blue;
+  font-size: 15px;
+  margin-left: 7px;
+  padding: 15px;
+  text-align: center;
 }
-#animalButtonsDiv button:hover{
-    box-shadow:gray 0 0px 0px 40px inset;
-    color: black;
+#animalButtonsDiv button:hover {
+  box-shadow: gray 0 0px 0px 40px inset;
+  color: black;
 }
 
 /*DIV Input Search*/
-#inputSearchDiv{
-    height: 50px; /*Adds space between animal search and images*/
+#inputSearchDiv {
+  height: 50px; /*Adds space between animal search and images*/
 }
-#inputSearch{
-    border:1px solid black;
-    font-size:15px;
+#inputSearch {
+  border: 1px solid black;
+  font-size: 15px;
 }
-#inputSearchDiv button{
-    border: 1px solid black;
-    font-size: 15px;
+#inputSearchDiv button {
+  border: 1px solid black;
+  font-size: 15px;
 }
-#inputSearchDiv button:hover{
-    box-shadow:black 0 0px 0px 40px inset;
-    color: white;
+#inputSearchDiv button:hover {
+  box-shadow: black 0 0px 0px 40px inset;
+  color: white;
 }
 
 /*Images produced by gifs*/
-img{
-    border: 1px solid black;
-    height:200px;
-    width: 200px;
+img {
+  border: 1px solid black;
+  height: 200px;
+  width: 200px;
 }
 
-.inlineBlock{
-    display: inline-block;
+.inlineBlock {
+  display: inline-block;
+}
+
+h1{
+    font-size:50px;
+    color:rgba(29, 27, 27, 0.322);
+    font-weight:700;
+    text-align:center;
+    line-height:100px;
 }
